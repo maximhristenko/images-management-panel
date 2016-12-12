@@ -1,0 +1,48 @@
+<div>
+    <div id="fileImage-container">
+        <div class="form-group label-static">
+            <label class="control-label" for="fileImage">Static label</label>
+            <input name="fileImage" #fileImage [(ngModel)]="form.fileImage" id="fileImage"
+                   type="file" (change)="onChangeFileImage($event)">
+            <input type="text" readonly="" class="form-control" placeholder="Image file">
+        </div>
+    </div>
+    <br>
+    <div id="image-preview-container">
+        <div id="image-preview" [style.background-image]="'url(' + noImage + ')'"></div>
+    </div>
+    <div class="clearfix"></div>
+    <form #form="ngForm">
+        <div id="tooltop-text-container">
+            <div class="form-group label-static">
+                <label for="tooltipText" class="control-label">Tooltip text</label>
+                <input class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="tooltipText"
+                       (ngModelChange)="onChangeToolTip($event)" type="text" id="tooltipText"
+                       placeholder="Type tooltop text..."/>
+            </div>
+        </div>
+        <div class="form-group">
+            <span (click)="onAddImage($event)" class="btn btn-info">Save changes</span>
+            <span class="btn btn-danger" (click)="checkSelectedItem()">Remove image</span>
+        </div>
+    </form>
+    <div class="modal fade" id="modalConfirmDeletion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Image removing</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you really sure?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" (click)="onRemoveSelected($event)">Remove image
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

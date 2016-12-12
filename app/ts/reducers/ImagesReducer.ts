@@ -16,7 +16,7 @@ export interface ImagesState {
   ids: string[];
   entities: ImagesEntities;
   currentImageId?: string;
-};
+}
 
 const initialState: ImagesState = {
   ids: [],
@@ -61,9 +61,9 @@ export const ImagesReducer =
         // Removes Image
         case ImageActions.REMOVE_IMAGE: {
           const id = (<ImageActions.RemoveImageAction>action).id;
-          let entities = delete state.entities[id];
+          delete state.entities[id];
           let ids = state.ids.filter(function(i) {
-            return i != id
+            return i !== id;
           });
           return {
             ids: ids,
@@ -97,20 +97,17 @@ export const ImagesReducer =
 export const getImagesState = (state): ImagesState => state.images;
 
 export const getImagesEntities = createSelector(
-    getImagesState,
-  ( state: ImagesState ) => state.entities );
+    getImagesState, ( state: ImagesState ) => state.entities );
 
 export const getAllImages = createSelector(
-    getImagesEntities,
-  ( entities: ImagesEntities ) => Object.keys(entities)
+    getImagesEntities, ( entities: ImagesEntities ) => Object.keys(entities)
                         .map((imageId) => entities[imageId]));
 
 
 // This selector emits the current image
 export const getCurrentImage = createSelector(
     getImagesEntities,
-    getImagesState,
-  ( entities: ImagesEntities, state: ImagesState ) =>
+    getImagesState, ( entities: ImagesEntities, state: ImagesState ) =>
     entities[state.currentImageId] );
 
 

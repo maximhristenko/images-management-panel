@@ -1,23 +1,22 @@
 /* tslint:disable:typedef */
-
 import {
-  Reducer,
-  combineReducers 
+    Reducer,
+    combineReducers
 } from 'redux';
 
 
 import {
-  ImagesState,
-  ImagesReducer
-} from './ImagesReducer.ts';
-export * from './ImagesReducer.ts';
+    ImagesState,
+    ImagesReducer
+} from './ImagesReducer';
+export * from './ImagesReducer';
 
 export interface AppState {
-  images: ImagesState;
+    images: ImagesState;
 }
 
 const rootReducer: Reducer<AppState> = combineReducers<AppState>({
-  images: ImagesReducer
+    images: ImagesReducer
 });
 
 export default rootReducer;

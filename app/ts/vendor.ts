@@ -16,6 +16,3 @@ import '@angular/http';
 // RxJS
 import 'rxjs';
 import 'ts-helpers';
-
-//import 'bootstrap-material-design/dist/css/bootstrap-material-design.css'
-//require('bootstrap-material-design/dist/css/bootstrap-material-design.css')

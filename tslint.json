@@ -1,5 +1,5 @@
 {
- /* "rules": {
+ "rules": {
    "align": [true,
         "parameters",
         "arguments",
@@ -14,7 +14,7 @@
     "label-position": true,
     "label-undefined": true,
     "jsdoc-format": true,
-    "max-line-length": [true, 80],
+    "max-line-length": [true, 500],
     "member-ordering": [false,
         "public-before-private",
         "variables-before-functions"
@@ -40,7 +40,7 @@
     "no-switch-case-fall-through": false,
     "trailing-comma": false,
     "no-trailing-whitespace": true,
-    "no-unused-expression": true,
+    "no-unused-expression": false,
     "no-unused-variable": true,
     "no-unreachable": true,
     "no-use-before-declare": true,
@@ -67,7 +67,7 @@
         "call-signature": "nospace",
         "index-signature": "nospace",
         "parameter": "nospace",
-        "property-declaration": "onespace",
+        "property-declaration": "nospace",
         "variable-declaration": "nospace"
     }],
     "whitespace": [true,
@@ -78,8 +78,5 @@
       "check-module",
       "check-type"
     ]
-  }*/
-  "rules": {
-
   }
 }

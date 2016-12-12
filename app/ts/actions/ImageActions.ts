@@ -1,20 +1,20 @@
 import {
-  Action,
-  ActionCreator
+    Action,
+    ActionCreator
 } from 'redux';
 import {
-  Image
+    Image
 } from '../models';
 
 export const ADD_IMAGE = '[Image] Add';
 export interface AddImageAction extends Action {
-  image: Image;
+    image: Image;
 }
 export const addImage: ActionCreator<AddImageAction> =
-  (image) => ({
-    type: ADD_IMAGE,
-    image: image
-  });
+    (image) => ({
+        type: ADD_IMAGE,
+        image: image
+    });
 
 
 export const SELECT_IMAGE = '[Image] Select';
@@ -22,11 +22,12 @@ export interface SelectImageAction extends Action {
     image: Image;
 }
 export const selectImage: ActionCreator<SelectImageAction> =
-  (image) => {
-    return{
-    type: SELECT_IMAGE,
-    image: image
-  }};
+    (image) => {
+        return {
+            type: SELECT_IMAGE,
+            image: image
+        };
+    };
 
 export const EDIT_IMAGE = '[Image] Edit';
 export interface EditImageAction extends Action {
@@ -34,10 +35,11 @@ export interface EditImageAction extends Action {
 }
 export const editImage: ActionCreator<EditImageAction> =
     (image) => {
-        return{
+        return {
             type: EDIT_IMAGE,
             image: image
-        }};
+        };
+    };
 
 export const REMOVE_IMAGE = '[Image] Remove';
 export interface RemoveImageAction extends Action {
@@ -45,8 +47,9 @@ export interface RemoveImageAction extends Action {
 }
 export const removeImage: ActionCreator<RemoveImageAction> =
     (id) => {
-        return{
+        return {
             type: REMOVE_IMAGE,
             id: id
-        }};
+        };
+    };
 

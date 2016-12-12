@@ -1,4 +1,4 @@
-import {Image} from './models/Image';
+import {Image} from '../models/Image';
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -31,7 +31,7 @@ export class ImageService {
     deleteImage(image: Image) {
         return this.http
             .delete('http://localhost:8080/api/image/' + image.id)
-            .map(res => res.text())
+            .map(res => res.text());
 
     }
 
@@ -40,16 +40,16 @@ export class ImageService {
         return this.http
             .get('http://localhost:8080/api/image')
             .map(res => {
-                return res.json()
-            })
+                return res.json();
+            });
 
     }
 
-    loadImageById(id) {
+   /* loadImageById(id) {
         return this.http
             .get('http://localhost:8080/api/image/' + id)
-            .map(res => res.json())
+            .map(res => res.json());
 
-    }
+    }*/
 
 }
